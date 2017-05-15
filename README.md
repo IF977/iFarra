@@ -7,6 +7,8 @@
 - Paulo Sérgio: Desenvolvedor
 - Marcílio Freitas: Desenvolvedor
 
+# Página da Aplicação: https://ifarra.herokuapp.com/
+
 ## Objetivo
 Desenvolver uma aplicação SaaS para ajudar os usuários a encontrar e descobrir lugares nos quais possam se divertir, sozinhos ou com grupos de amigos. 
 
