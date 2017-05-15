@@ -14,8 +14,8 @@ Feature: sign_up
     And I fill user_password input with <password>
     And I fill user_password_confirmation input with <password>
     And I click on the sign_up button
-    Then I should go to / link                                                                        #Mateus, isso deveria ser assim "i should go to /users/id_profile ou algo do tipo"
-    And I should see Find me in                                                                       #aqui deve ter uma mensagem que vai ter no profile do usuario (antes de rodar apaga o comentário senão da bug)
+    Then I should go to /users/edit link
+    And I should see Edit User
     
     Examples:
       | email | password |

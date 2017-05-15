@@ -14,8 +14,8 @@ Feature:
     When I fill user_email input with user@gmail.com
     And I fill user_password input with 123456
     And I click on the login button
-    Then I should go to /user/1 link                                                #Mateus, isso deveria ser assim "i should go to /users/id_profile ou algo do tipo"
-    And I should see eae                                                            #aqui deve ter uma mensagem que vai ter no profile do usuario (antes de rodar apaga o comentário senão da bug)
+    Then I should go to /users/edit link
+    And I should see Edit User
     
   Scenario: Tentando logar sem email (Sad path)
     When I fill user_password input with 123456
