@@ -6,16 +6,15 @@ Feature: sign_up
   Background: Começando da página de criação de conta
     Given I am on the home page
     When I click on the sign_up button
-    Then I should go to /users/sign_up link
-    And I should see Sign up
+    And I visit /users/sign_up link
+    Then I should see Sign up
   
   Scenario Outline: Usuario criado com sucesso (Happy path)
     When I fill user_email input with <email>
     And I fill user_password input with <password>
     And I fill user_password_confirmation input with <password>
     And I click on the sign_up button
-    Then I should go to /users/edit link
-    And I should see Edit User
+    Then I should see Welcome! You have signed up successfully.
     
     Examples:
       | email | password |
