@@ -1,0 +1,18 @@
+<h1>Eventos</h1> 
+
+  <%= form_tag eventos_path, :method => :get do %>
+  <%= label_tag("Meus eventos") %>
+  <%= check_box_tag 'meus_eventos' %>
+  <%= submit_tag 'Atualizar' %>
+  
+&nbsp <%= link_to 'Criar evento', new_evento_path, :id => 'criar_evento' %>
+
+<p><% @eventos.each do |evento| %>
+    <b>Nome: </b> <%= evento.nome %> <br/>
+    <b>Local: </b><%= evento.endereco %> <br/>
+    <b>Criador: </b><%= evento.user.email %> <br/>
+    
+    <%=link_to 'Mais informações', evento_path(evento.id) %></p>
+
+<%end%>
+<%end%>

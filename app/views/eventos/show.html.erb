@@ -1,0 +1,32 @@
+<h1>Evento:</h1>
+
+<h3>Nome do Evento</h3>
+<%=@evento.nome %>
+
+<h3>Descrição do Evento</h3>
+<%=@evento.descricao %>
+
+<h3>Data e hora de inicio</h3>
+<%=@evento.inicio %>
+
+<h3>Data e hora do fim</h3>
+<%=@evento.fim %>
+
+<h3>Endereço</h3>
+<%=@evento.endereco %>
+
+<h3>Nome do local</h3>
+<%=@evento.nome_local %>
+
+<h3>Criador do evento</h3>
+<%=@evento.user.email %><br/><br/>
+
+<% if can? :update, @evento %>
+    <%=link_to 'Edit', edit_evento_path(@evento)%>
+<% end %>
+
+<% if can? :update, @evento %>
+    <%=link_to 'Delete', evento_path(@evento), method: :delete, data: {confirm: 'Tem certeza que deseja excluir o evento?'} %>
+<% end %>
+
+<%=link_to 'Voltar aos eventos', eventos_path%>
