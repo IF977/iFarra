@@ -8,10 +8,11 @@
 </head>
 <body>
 
-<spam class="notice"><%= notice %></spam>
+
 <spam class="alert"><%= alert %></spam>
 <%= render '/layouts/nav' %>
-<%= yield %>
 
+<%= yield %>
+<p><spam class="notice"><%= notice %></spam></p>
 </body>
 </html>
