@@ -3,6 +3,8 @@
 <h3>Nome do Evento</h3>
 <%=@evento.nome %>
 
+<p><%= image_tag @evento.image.url(:medium) %></p>
+
 <h3>Descrição do Evento</h3>
 <%=@evento.descricao %>
 

@@ -26,7 +26,7 @@ class EventosController < ApplicationController
           flash[:notice] = 'Evento criado com sucesso'
           redirect_to @evento
       else
-          flash[:notice] = 'Preencha todos os campos'
+          flash[:notice] = 'Preencha todos os campos e adicione uma foto'
           render 'new'
       end
     end
@@ -54,6 +54,6 @@ class EventosController < ApplicationController
     end
     
     def evento_params
-       params.require(:evento).permit(:nome, :inicio, :fim, :descricao, :endereco, :nome_local, :user_id)
+       params.require(:evento).permit(:image, :nome, :inicio, :fim, :descricao, :endereco, :nome_local, :user_id)
     end
 end

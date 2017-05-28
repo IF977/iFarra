@@ -1,6 +1,11 @@
 <h1>Criar eventos</h1>
 
-<%= form_for @evento do |f| %>
+<%= form_for @evento, html: { multipart: true } do |f| %>
+  
+  <div class="field">
+    <%= f.label :Imagem %><br />
+    <%= f.file_field :image%>
+  </div>
   
   <div class="field">
     <%= f.label :Nome %><br />

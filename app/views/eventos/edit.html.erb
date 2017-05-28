@@ -1,7 +1,12 @@
 <h2>Editar evento</h2>
 
-<%= form_for @evento do |f| %>
-
+<%= form_for @evento, html: { multipart: true } do |f| %>
+  
+  <div class="field">
+    <%= f.label :Imagem %><br />
+    <%= f.file_field :image%>
+  </div>
+  
   <div class="field">
     <%= f.label :Nome %><br />
     <%= f.text_field :nome, placeholder: "Cipoada" %>
