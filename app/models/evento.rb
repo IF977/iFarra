@@ -14,6 +14,5 @@ class Evento < ActiveRecord::Base
    validates :fim, presence: true
    validates :nome_local, presence: true
    validates :endereco, presence: true
-   validates :image, presence: true
 
 end
