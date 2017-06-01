@@ -54,6 +54,6 @@ class EventosController < ApplicationController
     end
     
     def evento_params
-       params.require(:evento).permit(:nome, :inicio, :fim, :descricao, :endereco, :nome_local, :user_id)
+       params.require(:evento).permit(:image, :nome, :inicio, :fim, :descricao, :endereco, :nome_local, :user_id)
     end
 end

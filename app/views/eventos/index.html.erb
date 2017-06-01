@@ -11,6 +11,7 @@
     <b>Nome: </b> <%= evento.nome %> <br/>
     <b>Local: </b><%= evento.endereco %> <br/>
     <b>Criador: </b><%= evento.user.email %> <br/>
+    <div><%= image_tag evento.image.url(:thumb) %></div>
     
     <%=link_to 'Mais informações', evento_path(evento.id) %></p>
 
