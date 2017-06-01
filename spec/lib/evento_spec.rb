@@ -11,7 +11,7 @@ describe Evento do
         expect(evento_instance).to be_an_instance_of(Evento)
     end
     
-    it 'has an valid nome, descricao and endereco?' do
+    it 'has an valid nome, descricao, endereco, image_file_name and image_content_type?' do
         expect(evento_instance.nome).not_to be_empty
         expect(evento_instance.nome).to be_an_instance_of(String)
         expect(evento_instance.nome).to match(regex_letras) and match(regex_numeros)
@@ -23,6 +23,14 @@ describe Evento do
         expect(evento_instance.endereco).not_to be_empty
         expect(evento_instance.endereco).to be_an_instance_of(String)
         expect(evento_instance.endereco).to match(regex_letras) and match(regex_numeros)
+		
+		expect(evento_instance.image_file_name).not_to be_empty
+        expect(evento_instance.image_file_name).to be_an_instance_of(String)
+        expect(evento_instance.image_file_name).to match(regex_letras) and match(regex_numeros)
+		
+		expect(evento_instance.image_content_type).not_to be_empty
+        expect(evento_instance.image_content_type).to be_an_instance_of(String)
+        expect(evento_instance.image_content_type).to match(regex_letras) and match(regex_numeros)
     end
     
     it 'has an valid user_id?' do
@@ -31,13 +39,12 @@ describe Evento do
         expect(evento_instance.user_id).not_to match(regex_letras)
     end
     
-    it 'has an valid date for inicio and fim' do
+    it 'has an valid date for inicio and fim and image_updated_at' do
         datetime_array = evento_instance.inicio.split(' ')
         data = datetime_array[0].split('-')
         ano = data[0].to_i
         mes = data[1].to_i
         dia = data[2].to_i
-
         if mes == 2 ;
             expect(dia).to be_between(1,28)
         end
@@ -52,7 +59,7 @@ describe Evento do
         expect(ano).to be > 1900
     end
     
-    it 'has a valid time for inicio and fim' do
+    it 'has a valid time for inicio and fim image_updated_at' do
         datetime_array = evento_instance.inicio.split(' ')
         data = datetime_array[1].split(':')
         hora = data[0].to_i
@@ -63,6 +70,5 @@ describe Evento do
             expect(minuto).to be_between(0,59)
             expect(segundo).to be_between(0,59)
         end
-    end 
-    
+    end
 end
