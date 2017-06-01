@@ -26,7 +26,7 @@ class EventosController < ApplicationController
           flash[:notice] = 'Evento criado com sucesso'
           redirect_to @evento
       else
-          flash[:notice] = 'Preencha todos os campos e adicione uma foto'
+          flash[:notice] = 'Preencha todos os campos'
           render 'new'
       end
     end
