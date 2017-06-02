@@ -1,0 +1,17 @@
+<h1>Resultados dos locais</h1>
+
+<% unless @response.nil? %>
+  <% @response['result']['records'].each do |local| %>
+    <div class="field">
+      <h3><%= 'Nome do local: ' + local['nome'] %></h3>
+     <p> <%= 'Endereço do local:' + local['endereco'] %> </p>
+     <p> <%= 'Especialidade: ' + local['especialidade'] %> </p>
+      <%= link_to "#{local['nome']} parece ser um bom lugar", new_evento_path(:nome_local => local['nome'], :endereco_local => local['endereco']), id: local['nome'].gsub(' ', '_') %>
+    </div>
+  <%end%>
+  <%= link_to 'pagina anterior', places_search_with_dados_abertos_path(:prev_page => @response['result']['_links']['start']) %>
+  <%= link_to 'proxima pagina', places_search_with_dados_abertos_path(:next_page => @response['result']['_links']['next']) %>
+<% else %>
+  <h3>Nenhum lugar encontrado</h3>
+<%end%>
+<%= link_to 'Procurar outros lugares', places_search_type_path %>

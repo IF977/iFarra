@@ -29,11 +29,11 @@
   
   <div class="field">
     <%= f.label :Nome_do_Local %><br />
-  <%= f.text_field :nome_local %>
+  <%= f.text_field :nome_local, value: params[:nome_local] %>
   
   <div class="field">
     <%= f.label :Endereco %><br />
-  <%= f.text_field :endereco %>
+  <%= f.text_field :endereco, value: params[:endereco_local] %>
   </div>
     
   <p><%= f.submit (), id: 'criar_evento' %></p>

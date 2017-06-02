@@ -1,5 +1,8 @@
 source 'https://rubygems.org'
 
+
+# For API requests and responses
+gem 'httparty'
 # for authentication
 gem 'devise'
 # Permissões

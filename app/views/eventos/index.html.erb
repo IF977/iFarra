@@ -1,11 +1,14 @@
 <h1>Eventos</h1> 
 
   <%= form_tag eventos_path, :method => :get do %>
-  <%= label_tag("Meus eventos") %>
-  <%= check_box_tag 'meus_eventos' %>
-  <%= submit_tag 'Atualizar' %>
-  
-&nbsp <%= link_to 'Criar evento', new_evento_path, :id => 'criar_evento' %>
+    <%= label_tag("Meus eventos") %>
+    <%= check_box_tag 'meus_eventos' %>
+    <%= submit_tag 'Atualizar' %>
+  <%end%>
+
+&nbsp <%= link_to 'Procurar locais', places_search_type_path, :id => 'procurar_locais' %>
+&nbsp <%= link_to 'Já sei onde vai ser', new_evento_path, :id => 'criar_evento' %>
+
 
 <p><% @eventos.each do |evento| %>
     <b>Nome: </b> <%= evento.nome %> <br/>
@@ -14,6 +17,4 @@
     <div><%= image_tag evento.image.url(:thumb) %></div>
     
     <%=link_to 'Mais informações', evento_path(evento.id) %></p>
-
-<%end%>
-<%end%>
+   <%end%>
