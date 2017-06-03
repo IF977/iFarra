@@ -31,3 +31,8 @@ When (/^[I ]* am logged in with email ([^"]*) and password ([^"]*)$/) do |email,
   fill_in "user_password", :with => senha
   click_button "login"
 end
+
+When(/^I attach a image on evento_image$/) do
+  path = File.join('features', 'uploaded_files', 'foto_para_teste.jpg')
+  attach_file('evento_image', path)
+end

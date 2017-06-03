@@ -17,6 +17,7 @@ Feature: Criar evento com dados abertos do Recife
     And I fill evento_descricao input with <descricao>
     And I fill evento_inicio input with <inicio>
     And I fill evento_fim input with <fim>
+    And I attach a image on evento_image
     And I click on the Create button
     Then I should see Evento criado com sucesso
     
