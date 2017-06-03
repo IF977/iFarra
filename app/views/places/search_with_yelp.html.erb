@@ -1,0 +1,20 @@
+<h1>resultados locais</h1>
+
+<% unless @response.nil? %>
+  <p>
+  <% @response['businesses'].each do |local| %>
+    <p>
+    <%= image_tag(local['image_url'], size: "150x150", alt: "Edit Entry") %>
+    <%= local['name'] %>
+    <% local['location']['display_address'].each do |endereco| %>
+      <%= endereco %>
+    <%end%>
+    <%= link_to "#{local['name']} parece ser um bom lugar", new_evento_path(:nome_local => local['name'], :endereco_local => local['location']['display_address']), id: local['name'].gsub(' ', '_') %>
+    </p>
+  <%end%>
+  <p>
+<% else %>
+  <h3>Nenhum lugar encontrado</h3>
+<%end%>
+
+<%= link_to 'Procurar outros lugares', places_search_type_path %>
