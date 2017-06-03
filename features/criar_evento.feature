@@ -17,6 +17,7 @@ Feature: Criar evento
     And I fill evento_fim input with <fim>
     And I fill evento_nome_local input with <nome_local>
     And I fill evento_endereco input with <endereco>
+    And I attach a image on evento_image
     And I click on the Create button
     Then I should see Evento criado com sucesso
     
