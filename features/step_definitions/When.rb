@@ -2,6 +2,10 @@ When(/^[I ]*fill ([^"]*) input with ([^"]*)$/) do |input, data|
   fill_in(input, :with => data)
 end
 
+When(/^([^"]*) input is empty$/) do |input|
+  fill_in(input, :with => nil)
+end
+
 When(/^[I ]*click on the ([^"]*) button$/) do |button|
   click_button(button)
 end
@@ -35,4 +39,20 @@ end
 When(/^I attach a image on evento_image$/) do
   path = File.join('features', 'uploaded_files', 'foto_para_teste.jpg')
   attach_file('evento_image', path)
+end
+
+When(/^I have a evento with ([^"]*); ([^"]*); ([^"]*); ([^"]*); ([^"]*); ([^"]*)$/) do |nome, descricao, inicio, fim, nome_local, endereco_local|
+  @evento = Evento.create!({
+    :nome => nome,
+    :descricao => descricao,
+    :inicio => inicio,
+    :fim => fim,
+    :nome_local => nome_local,
+    :endereco => endereco_local,
+    :user_id => 1
+  })
+end
+
+When(/^I am on the evento page$/) do
+  visit('eventos/' + @evento.id.to_s)
 end

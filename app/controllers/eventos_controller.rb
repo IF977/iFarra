@@ -36,8 +36,10 @@ class EventosController < ApplicationController
     
     def update
         if @evento.update(evento_params)
+            flash[:notice] = 'Evento editado com sucesso'
             redirect_to @evento
         else
+            flash[:notice] = 'Preencha todos os campos'
             render 'edit'
         end
     end
