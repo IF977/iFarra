@@ -10,5 +10,4 @@ class Yelp
    def self.search_by_name(name)
       get('/search?', :headers => @@headers, :query => {'term' => name, 'location' => 'Recife', 'limit' => 15})
    end
-   
 end
