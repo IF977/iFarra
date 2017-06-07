@@ -2,10 +2,13 @@
 
 <%= link_to 'Dados abertos de Recife', places_search_with_dados_abertos_path, id: 'dados_abertos_recife' %>
 
-<div>
+<div class='text_area'>
 <%= form_tag '/places/search_with_yelp', :method => 'get' do %>
-        <%= text_field_tag(:search_input) %>
-        <%= submit_tag("Pesquisar") %>
+        <div class='container' >
+                <%= image_tag('yelp_trademark.png', size: "36x21", class: 'img') %>
+                <%= text_field_tag :search_input, nil, placeholder: 'powered by Yelp' %>
+                <%= submit_tag("Pesquisar") %>
+        </div>
 <%end%>
 </div>
 
