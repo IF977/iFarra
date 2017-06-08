@@ -1,42 +1,46 @@
 <h1>Criar eventos</h1>
 
-<%= form_for @evento, html: { multipart: true } do |f| %>
-  
-  <div class="field">
-    <%= f.label :Imagem %><br />
-    <%= f.file_field :image%>
-  </div>
-  
-  <div class="field">
-    <%= f.label :Nome %><br />
-    <%= f.text_field :nome%>
-  </div>
-  
-  <div class="field">
-    <%= f.label :Descricao %><br />
-  <%= f.text_field :descricao %>
-  </div>
+<div class="row">
+  <div class="col-md-3">
+    <%= form_for @evento, html: { multipart: true } do |f| %>
+      
+      <div class="field">
+        <%= f.label :Imagem %><br />
+        <%= f.file_field :image%>
+      </div>
+      
+      <div class="field">
+        <%= f.label :Nome %><br />
+        <%= f.text_field :nome%>
+      </div>
+      
+      <div class="field">
+        <%= f.label :Descricao %><br />
+      <%= f.text_field :descricao %>
+      </div>
+        
+      <div class="field">
+        <%= f.label :Inicio %><br />
+      <%= f.datetime_local_field :inicio %>
+      </div>
+      
+      <div class="field">
+        <%= f.label :Fim %><br />
+      <%= f.datetime_local_field :fim %>
+      </div>
+      
+      <div class="field">
+        <%= f.label :Nome_do_Local %><br />
+      <%= f.text_field :nome_local, value: params[:nome_local] %>
+      
+      <div class="field">
+        <%= f.label :Endereco %><br />
+      <%= f.text_field :endereco, value: params[:endereco_local] %>
+      </div>
+        
+      <p><%= f.submit (), id: 'criar_evento' %></p>
+      <p><%= link_to('Cancelar', eventos_path) %></p>
     
-  <div class="field">
-    <%= f.label :Inicio %><br />
-  <%= f.datetime_local_field :inicio %>
+    <%end%>
   </div>
-  
-  <div class="field">
-    <%= f.label :Fim %><br />
-  <%= f.datetime_local_field :fim %>
-  </div>
-  
-  <div class="field">
-    <%= f.label :Nome_do_Local %><br />
-  <%= f.text_field :nome_local, value: params[:nome_local] %>
-  
-  <div class="field">
-    <%= f.label :Endereco %><br />
-  <%= f.text_field :endereco, value: params[:endereco_local] %>
-  </div>
-    
-  <p><%= f.submit (), id: 'criar_evento' %></p>
-  <p><%= link_to('Cancelar', eventos_path) %></p>
-
-<%end%>
+</div>

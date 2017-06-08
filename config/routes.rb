@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
-  
+
   root 'pages#index'
+  
+  get 'messages' => 'pages#messages'
 
   get 'places/search_type' => 'places#search_type'
   
@@ -12,4 +14,11 @@ Rails.application.routes.draw do
   
   resources :eventos
   
+  resources :conversations, only: [:create] do
+    member do
+      post :close
+    end
+
+    resources :messages, only: [:create]
+  end
 end

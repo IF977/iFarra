@@ -1,0 +1,69 @@
+<style>
+  .btn {
+    display: inline-block;
+    padding: 4px 8px;
+    margin-bottom: 0;
+    font-size: 14px;
+  }
+  .panel-heading {
+    padding: 10px 15px;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+  }
+  ul {
+    padding-left: 0px;
+    list-style: none;
+  }
+  .messages-list {
+    max-height: 200px;
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+  .message-sent {
+    position: relative;
+    background-color: #D9EDF7;
+    border-color: #BCE8F1;
+    margin: 5px 20px;
+    padding: 10px;
+    float: right;
+  }
+  
+  .message-received {
+    background-color: #F1F0F0;
+    border-color: #EEEEEE;
+    margin: 5px 20px;
+    padding: 10px;
+    float: left;
+  }
+</style>
+
+<h3> Envie mensagens agora</h3>
+
+<div class="row">
+  <div class="col-md-9">
+      <ul id="conversations-list">
+        <% @conversations.each do |conversation| %>
+          <%= render 'conversations/conversation', conversation: conversation, user: current_user %>
+        <% end %>
+      </ul>
+  </div>
+
+  <div class="col-md-3">
+    <div class="panel-group" id="accordion">
+      <div class="panel panel-default">
+        <div class="panel-headingg">
+          <h4 class="panel-title"> <a data-toggle="collapse" class="panel-toggle active" data-parent="#accordion" href="#collapseOne"> Lista de Usuários </a> </h4>
+        </div>
+        <div id="collapseOne" class="panel-collapse collapse in">
+          <div class="panel-body"> 
+            <ul>
+              <% @users.each do |user| %>
+                <li><%= link_to user.email, conversations_path(user_id: user), remote: true, method: :post %></li>
+              <% end %>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
