@@ -57,6 +57,6 @@ When(/^I am on the evento page$/) do
   visit('eventos/' + @evento.id.to_s)
 end
 
-Given(/^I am not logged in$/) do
+When(/^I am not logged in$/) do
   visit('/users/sign_out')
 end
