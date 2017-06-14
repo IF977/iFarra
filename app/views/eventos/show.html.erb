@@ -27,7 +27,6 @@
 <%= render @evento.comentario %>
 <%= render 'comentarios/form' %>
 
-
 <% if can? :update, @evento %>
     <%=link_to 'Edit', edit_evento_path(@evento)%>
 <% end %>

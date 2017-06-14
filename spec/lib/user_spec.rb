@@ -19,6 +19,6 @@ describe User do
     end
     it "has an valid password?" do
         expect(user_instance.password).not_to be_empty
-        expect(user_instance.email).to match (caracteres_permitidos)
+        expect(user_instance.password).to match (caracteres_permitidos)
     end
 end
