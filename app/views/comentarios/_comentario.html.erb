@@ -1,0 +1,6 @@
+<div class="container_comentario">
+        <div class='comentario_user_email'><strong><%= comentario.user_email %></strong></div>
+        <div class='comentario_conteudo'> <%= comentario.body %> </div>
+        <div class='time_ago'><%= time_ago_in_words(comentario.created_at) %></div>
+		<%= link_to 'Delete', [comentario.evento, comentario], method: :delete, data: {confirm: 'Tem certeza que deseja excluir o comentario?'} %>
+</div>

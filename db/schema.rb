@@ -10,7 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170607042212) do
+ActiveRecord::Schema.define(version: 20170614132914) do
+
+  create_table "comentarios", force: :cascade do |t|
+    t.string   "user_email"
+    t.text     "body"
+    t.integer  "evento_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["evento_id"], name: "index_comentarios_on_evento_id"
+  end
 
   create_table "conversations", force: :cascade do |t|
     t.integer  "recipient_id"

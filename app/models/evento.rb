@@ -1,5 +1,6 @@
 class Evento < ActiveRecord::Base
   belongs_to :user
+  has_many :comentario
   
   has_attached_file :image, styles: { large: "600x600>", medium: "366x414>", thumb: "152x152#" }, :default_url => "Sem_foto"
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\z/
