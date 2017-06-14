@@ -23,6 +23,11 @@
 <h3>Criador do evento</h3>
 <%=@evento.user.email %><br/><br/>
 
+<h2> <%= @evento.comentario.count %> Comentarios </h2>
+<%= render @evento.comentario %>
+<%= render 'comentarios/form' %>
+
+
 <% if can? :update, @evento %>
     <%=link_to 'Edit', edit_evento_path(@evento)%>
 <% end %>

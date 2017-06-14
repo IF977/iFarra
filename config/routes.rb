@@ -12,7 +12,9 @@ Rails.application.routes.draw do
 
   devise_for :users
   
-  resources :eventos
+  resources :eventos do
+    resources :comentarios
+  end
   
   resources :conversations, only: [:create] do
     member do

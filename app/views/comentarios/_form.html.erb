@@ -1,0 +1,5 @@
+<%= form_for([@evento, @evento.comentario.new]) do |f| %>
+	<%= f.text_area :body %>
+	<%= f.hidden_field :user_email, value: current_user.email %>
+	<%= f.submit 'Criar comentario', :class => 'btn-submit' %>
+<% end %>
