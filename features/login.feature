@@ -28,11 +28,11 @@ Feature:
 
 #Comment - Testes para login com Facebook
 @omniauth_test_success
-  Scenario: Criando conta utilizando o Facebook (Caminho feliz)
+  Scenario: Logando com conta utilizando o Facebook (Caminho feliz)
     When I click on the Facebook link
     Then I should see Logado com sucesso
     
 @omniauth_test_failure
-  Scenario: Criando conta utilizando o Facebook (Caminho triste)
+  Scenario: Logando com conta utilizando o Facebook (Caminho triste)
     When I click on the Facebook link
     Then I should see Invalid credentials
