@@ -51,8 +51,32 @@ end
 #   end
 #
 
+# Testando o login com facebook
+Before('@omniauth_test_success') do
+  OmniAuth.config.test_mode = true
+  Capybara.default_host = 'http://example.com'
+  OmniAuth.config.add_mock(:facebook, {
+    "provider"  => "facebook",
+    "uid"       => '12345',
+    "info" => {
+    "email" => "email@email.com",
+    "first_name" => "John",
+    "last_name"  => "Doe",
+    "name"       => "John Doe"
+    }
+  })
+end
+
+Before('@omniauth_test_failure') do
+  OmniAuth.config.test_mode = true
+  OmniAuth.config.mock_auth[:facebook] = :invalid_credentials
+end
+
+After('@omniauth_test_end') do
+  OmniAuth.config.test_mode = false
+end
+
 # Possible values are :truncation and :transaction
 # The :transaction strategy is faster, but might give you threading problems.
 # See https://github.com/cucumber/cucumber-rails/blob/master/features/choose_javascript_database_strategy.feature
 Cucumber::Rails::Database.javascript_strategy = :truncation
-
