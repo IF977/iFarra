@@ -38,4 +38,15 @@ Feature: sign_up
     And I fill user_password_confirmation input with 1234
     And I click on the sign_up button
     Then I should see Password confirmation doesn't match Password
+
+
+#Comment - Testes para cadastro com Facebook
+@omniauth_test_success
+  Scenario: Criando conta utilizando o Facebook (Caminho feliz)
+    When I click on the Facebook link
+    Then I should see Logado com sucesso
     
+@omniauth_test_failure
+  Scenario: Criando conta utilizando o Facebook (Caminho triste)
+    When I click on the Facebook link
+    Then I should see Invalid credentials
