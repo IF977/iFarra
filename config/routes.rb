@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   
   get 'places/search_with_dados_abertos' => 'places#search_with_dados_abertos'
 
-  devise_for :users
+  devise_for :users, :controllers => { :omniauth_callbacks => "omniauth_callbacks" }
   
   resources :eventos do
     resources :comentarios
