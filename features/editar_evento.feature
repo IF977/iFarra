@@ -1,4 +1,7 @@
 Feature: Editar evento
+  Como usuário (criador de eventos)
+  Gostaria de fazer o login na aplicação
+  Para acessar, criar ou alterar eventos criados por mim
   
   Background:
     Given I am on the home page
