@@ -16,6 +16,8 @@ Rails.application.routes.draw do
     resources :comentarios
   end
   
+  resources :invites, only: [:create, :destroy]
+  
   resources :conversations, only: [:create] do
     member do
       post :close
