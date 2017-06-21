@@ -22,6 +22,10 @@ gem 'coffee-rails', '~> 4.1.0'
 gem "paperclip", "~> 5.0.0"
 # Bootstrap
 gem 'bootstrap-sass', '~> 3.3.6'
+# Geocoder
+gem 'geocoder'
+# Google Maps
+gem 'gmaps4rails'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 

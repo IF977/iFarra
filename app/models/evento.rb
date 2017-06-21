@@ -12,11 +12,13 @@ class Evento < ActiveRecord::Base
     @eventos = Evento.where(user_id: current_user_id)
   end
 
-   validates :nome, presence: true
-   validates :descricao, presence: true
-   validates :inicio, presence: true
-   validates :fim, presence: true
-   validates :nome_local, presence: true
-   validates :endereco, presence: true
-
+  validates :nome, presence: true
+  validates :descricao, presence: true
+  validates :inicio, presence: true
+  validates :fim, presence: true
+  validates :nome_local, presence: true
+  validates :endereco, presence: true
+   
+  geocoded_by :endereco
+  after_validation :geocode 
 end
