@@ -1,3 +1,4 @@
+<div class="col-md-3">
 <h1>Evento:</h1>
 
 <h3>Nome do Evento</h3>
@@ -23,7 +24,17 @@
 <h3>Criador do evento</h3>
 <%=@evento.user.email %><br/><br/>
 
+<% if signed_in? %>
+	<%= render 'invites/attend_form' %>
+<% end %>
+
+<h3>Lista de Confirmdos</h3>
+	<% @evento.attendees.each do |attendee| %>
+		<p><%= attendee.email %></p>
+	<% end %>
+
 <h2> <%= @evento.comentario.count %> Comentarios </h2>
+</div>
 <%= render @evento.comentario %>
 <%= render 'comentarios/form' %>
 
