@@ -10,6 +10,11 @@ class EventosController < ApplicationController
         flash[:notice] = 'Mostrando todos eventos'
         @eventos = Evento.all
       end
+      @hash = Gmaps4rails.build_markers(@eventos) do |evento, marker|
+        marker.lat evento.latitude
+        marker.lng evento.longitude
+        marker.infowindow evento.nome_local
+      end
     end
     
     def new
@@ -56,6 +61,6 @@ class EventosController < ApplicationController
     end
     
     def evento_params
-       params.require(:evento).permit(:image, :nome, :inicio, :fim, :descricao, :endereco, :nome_local, :user_id)
+       params.require(:evento).permit(:latitude, :longitude, :image, :nome, :inicio, :fim, :descricao, :endereco, :nome_local, :user_id)
     end
 end

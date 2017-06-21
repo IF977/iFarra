@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170621170929) do
+ActiveRecord::Schema.define(version: 20170621175226) do
 
   create_table "comentarios", force: :cascade do |t|
     t.string   "user_email"
@@ -45,6 +45,8 @@ ActiveRecord::Schema.define(version: 20170621170929) do
     t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
+    t.float    "latitude"
+    t.float    "longitude"
     t.index ["user_id"], name: "index_eventos_on_user_id"
   end
 
