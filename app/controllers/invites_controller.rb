@@ -3,6 +3,7 @@ class InvitesController < ApplicationController
 	def create
 		@evento = Evento.find(params[:invite][:attendee_event_id])
 		current_user.attend!(@evento)
+		flash[:notice] = 'Participando do evento'
 		redirect_to @evento
 	end
 

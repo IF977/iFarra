@@ -1,4 +1,4 @@
 <%= form_for(current_user.invites.build(attendee_event_id: @evento.id)) do |f| %>
   <div><%= f.hidden_field :attendee_event_id %></div>
-  <%= f.submit "Confirmar Presença", class: "btn btn-large btn-primary" %>
+  <%= f.submit "Confirmar Presença", :id=>"confirmar_presenca", class: "btn btn-large btn-primary" %>
 <% end %>

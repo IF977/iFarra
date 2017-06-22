@@ -8,6 +8,7 @@
 - Marcílio Freitas: Desenvolvedor
 
 ## Página da Aplicação: https://ifarra.herokuapp.com/
+## Screencast: https://www.youtube.com/watch?v=CQmhS-Sm3ck&feature=youtu.be
 
 ## Objetivo
 Desenvolver uma aplicação SaaS para ajudar os usuários a encontrar e descobrir lugares nos quais possam se divertir, sozinhos ou com grupos de amigos. 
