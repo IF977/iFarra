@@ -21,7 +21,7 @@ gem 'coffee-rails', '~> 4.1.0'
 # Use for add upload image in event
 gem "paperclip", "~> 5.0.0"
 # Bootstrap
-gem 'bootstrap-sass', '~> 3.3.6'
+gem 'bootstrap-sass', '~> 3.4.1'
 # Geocoder
 gem 'geocoder'
 # Google Maps
